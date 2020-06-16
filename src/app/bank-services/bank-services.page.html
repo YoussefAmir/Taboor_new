@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-back-button>
+
+      </ion-back-button>
+    </ion-buttons>
+
+
+    <ion-title>{{activityDetail[0].name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content select="template">
+<ion-list>
+  <div>
+    
+      <ion-list-header style="margin-bottom:10px ;">
+        Available Services
+      </ion-list-header>
+      <ion-item *ngFor="let service of branch.services">
+        <ion-label style="text-indent:10%;">{{service.toUpperCase()}}</ion-label>
+        <ion-button color="primary" style="align-items: left;" (click)="addToFav(service)">Enroll</ion-button>        
+    </ion-item>
+   
+  </div>
+
+</ion-list>
+</ion-content>

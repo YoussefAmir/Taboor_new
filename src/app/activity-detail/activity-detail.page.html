@@ -1,0 +1,75 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button>
+
+      </ion-back-button>
+    </ion-buttons>
+     <!-- For Now Will remove Later !-->
+      <!-- <ion-icon name="arrow-back-outline"></ion-icon>
+      <a href="/tabs/tab1" style="color: #ffffff; text-decoration:none">Back</a>
+       -->
+    <ion-title style="text-align: center;">Detail</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="activityDetail[0].isAvailable">
+  <ion-img [src]="activityDetail[0].img" alt=""></ion-img>
+  <!-- <ion-img src="../../assets/alahli.jpg"></ion-img> -->
+
+  <ion-card no-margin>
+    <ion-card-header>
+     
+      <ion-card-title>
+        <!-- Al Ahli Bank -->
+        
+        {{activityDetail[0].name}}
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <!-- Al Ahli Bank is the national bank of Egypt. -->
+      {{activityDetail[0].desc}}
+      
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-list lines="none">
+      <ion-item>
+        <ion-label>Number of Branches</ion-label>
+        <ion-chip color="primary">{{activityDetail[0].branches?.length}}</ion-chip>
+      </ion-item>
+      <ion-item>
+        <ion-label>Category</ion-label>
+        <ion-chip color="primary">{{activityDetail[0].medium}}</ion-chip>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+
+  <ion-button [disabled]= "!activityDetail[0].branches" (click) = "openModal()" expand="full" color="primary">Show Branches</ion-button>
+ 
+  <!-- <ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+
+    <ion-fab-list side="bottom">
+       <ion-fab-button (click) ="openModal()">
+        <ion-icon color="success" name="play"></ion-icon>
+      </ion-fab-button>
+
+      <ion-fab-button (click)="share()">
+        <ion-icon color="black" name="share-social-outline"></ion-icon>
+      </ion-fab-button> 
+
+      <ion-fab-button (click)="addToFav()">
+        <ion-icon color="danger" name="star"></ion-icon>
+      </ion-fab-button>
+
+      <ion-fab-button (click)="removeFav()">
+        <ion-icon name="star-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+  -->
+</ion-content>

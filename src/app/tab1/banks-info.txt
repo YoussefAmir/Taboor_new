@@ -1,0 +1,7 @@
+id: "1";
+video_url: "";
+name: "Al Ahli Bank";
+description: "Al Ahli Bank is the national Bank of Egypt";
+image: "ahli.jpg";
+cropped: "ahli.jpg";
+category: "Public";

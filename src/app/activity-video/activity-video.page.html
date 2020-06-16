@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar style="margin-top:10px ;">
+    <ion-menu-button style="position: absolute ;top: 0px;left: 0px; z-index: 5;" slot="start"></ion-menu-button>
+
+    <ion-title id="mainTitle" style="text-align: center;">{{activityDetail[0].name}}</ion-title>
+    <ion-icon (click)="closeModal()" name="close-circle-outline" color="danger"> </ion-icon>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar inputmode="search" (ionInput)="getItems($event)"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="!activityDetail[0].branches">
+    <ion-card>
+      <ion-skeleton-text class="skeleton-image" animated> </ion-skeleton-text>
+      <ion-card-header>
+        <ion-skeleton-text animated> </ion-skeleton-text>
+        <ion-skeleton-text animated> </ion-skeleton-text>
+      </ion-card-header>
+    </ion-card>
+
+    <ion-card>
+      <ion-skeleton-text class="skeleton-image" animated> </ion-skeleton-text>
+      <ion-card-header>
+        <ion-skeleton-text animated> </ion-skeleton-text>
+        <ion-skeleton-text animated> </ion-skeleton-text>
+      </ion-card-header>
+    </ion-card>
+
+    <ion-card>
+      <ion-skeleton-text class="skeleton-image" animated> </ion-skeleton-text>
+      <ion-card-header>
+        <ion-skeleton-text animated> </ion-skeleton-text>
+        <ion-skeleton-text animated> </ion-skeleton-text>
+      </ion-card-header>
+    </ion-card>
+</div>
+<div  *ngFor="let activity of activityDetail[0].branches" >
+  <ion-card (click)="closeModal()" [routerLink]="['tabs/tab1/bank-services', activity.id]" *ngIf="(activity.isAvailable && (activity.location.toLowerCase().indexOf(Search) != -1))">
+  
+    <ion-img [src]="activity.img">
+    </ion-img>
+    <ion-card-header>
+      <ion-card-title>
+        {{activity.name}}
+      </ion-card-title>
+    </ion-card-header>
+  </ion-card>
+  </div>
+
+
+</ion-content>
