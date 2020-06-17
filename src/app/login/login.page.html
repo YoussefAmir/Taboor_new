@@ -7,7 +7,13 @@
 <ion-content>
 
   <ion-card>
+    
     <ion-card-content>
+      <ion-card-title style="margin-bottom: 20px;">Login Here</ion-card-title>
+
+    <ion-card-header class="header1">
+      
+    </ion-card-header>
       <form [formGroup]="loginFromGroup">
         <ion-item>
           <ion-item>Email</ion-item>
@@ -21,7 +27,9 @@
 
 
         <ion-button (click)="login()" [disabled]="loginFromGroup.invalid" style="margin-top: 30px;" expand="full">Login</ion-button>
+        <ion-label>Not a member?</ion-label><button (click)="openModal()"style="size: 5px; color:blue;">Register Now</button>
       </form>
     </ion-card-content>
+    
   </ion-card>
 </ion-content>

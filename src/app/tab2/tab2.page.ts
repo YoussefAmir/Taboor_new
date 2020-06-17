@@ -17,6 +17,7 @@ export class Tab2Page implements OnInit {
   favList: Observable<any>;
   services: string[];
   counter: number;
+  obj;
   constructor(private _angularFireStore: AngularFirestore,
     private _angularFireAuth: AngularFireAuth,
     private toastController: ToastController) {
@@ -29,6 +30,7 @@ export class Tab2Page implements OnInit {
       .doc(firebase.auth().currentUser.uid)
       .collection("queue")
       .valueChanges()
+
       var service: string[] = [];
 
       firebase.firestore().collection("queue").doc(firebase.auth().currentUser.uid).collection("queue").get().then(function(querySnapshot) {
@@ -87,8 +89,10 @@ removeFav(id: string){
       .collection("queue")
       .doc(id)
       .delete();
+  
 
       this.presentToast('delete');
+      this.doRefresh(this.obj)
     }
   })
 
@@ -107,7 +111,7 @@ removeFav(id: string){
 }
 
 doRefresh(event) {
-
+  this.obj = event
   setTimeout(() => {
     this.ngOnInit();
     event.target.complete();

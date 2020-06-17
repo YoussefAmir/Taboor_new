@@ -21,7 +21,7 @@
         <div>
         <ion-item>
           <ion-icon name="people-circle-outline"></ion-icon>
-          <ion-label style="text-indent:10%;">{{activity.name}} - {{services[i].toUpperCase().slice(0,-6)}}</ion-label>
+          <ion-label style="text-indent:10%;">{{activity.name}} - {{services[i]?.toUpperCase().slice(0,-6)}}</ion-label>
           <ion-button color="danger" style="align-items: left;" (click) = "removeFav(services[i])">UnEnroll</ion-button>
         </ion-item>
     </div>

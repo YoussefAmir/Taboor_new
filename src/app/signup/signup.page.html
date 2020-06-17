@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Sign Up</ion-title>
+    <ion-buttons>
+      <ion-back-button>
+
+      </ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+  <ion-card-content>
+    <ion-card-title style="margin-bottom: 20px;">Register Here</ion-card-title>
+  
+    <ion-card-header class="header2">
+      
+    </ion-card-header>
+    <!-- <form [formGroup]="signUpFromGroup">
+      <ion-input formControlName="email" type="email"></ion-input>
+
+    </form> -->
+    <form [formGroup]="signUpFromGroup">
+
+      <ion-item>
+        <ion-item>Email</ion-item>
+        <ion-input formControlName="email" type="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-item>Password</ion-item>
+        <ion-input formControlName="password" type="password"></ion-input>
+      </ion-item>
+
+      <ion-button (click)="signUp()" [disabled]="signUpFromGroup.invalid" style="margin-top: 30px;" expand="full">Sign Up</ion-button>
+      ><button (click)="openModal()"style="size: 5px; color:blue;">Login Now</button>
+
+    </form>
+  </ion-card-content>
+</ion-card>
+</ion-content>
